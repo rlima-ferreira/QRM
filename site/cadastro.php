@@ -19,7 +19,7 @@ $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com 
 							<div class="row">
 								<div class="col-md-6">
 									<label>Email</label>
-									<input type="text" name="loginCad" class="loginCad" placeholder="Login">
+									<input type="text" name="emailCad" class="emailCad" placeholder="Email">
 								</div>
 								<div class="col-md-6">
 									<label>Senha</label>
@@ -34,11 +34,18 @@ $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com 
 									<label>Nome Completo</label>
 									<input type="text" name="nomeCad" placeholder="Nome Completo" class="nomeCad">
 								</div>
-								
-								<div class="col-md-6">
+                                <div class="col-md-6">
+                                    <label>CPF</label>
+                                    <input type="text" name="cpfCad" placeholder="CPF" class="cpfCad">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>RG</label>
+                                    <input type="text" name="rgCad" placeholder="RG" class="rgCad">
+                                </div>
+                                <div class="col-md-6">
 									<label>Data de Nascimeto</label>
 									<input type="text" name="dataCad" class="dataCad" placeholder="Data de Nascimento">
-								</div>
+                                </div>
 								<div class="col-md-6">
 									<label>Sexo</label>
 									<select name="sexoCad" class="sexoCad">
@@ -55,10 +62,6 @@ $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com 
                                     <label>Telefone de recado</label>
                                     <input type="text" name="telRecadoCad" placeholder="Telefone de recado" class="telCad">
                                 </div>
-								<div class="col-md-12">
-									<label>Email</label>
-									<input type="email" name="emailCad" class="emailCad" placeholder="Email">
-								</div>
 							</div>						
 						</fieldset>
 						<fieldset>
@@ -107,9 +110,8 @@ $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com 
 									<label>Estado</label>
 									<select name="estado">
 										<option value="">Estado</option>
-										<option value="a">Fudeu</option>
-										<option value="b">Muita</option>
-										<option value="c">Coisa</option>									
+										<option value="a">Rio de Janeiro</option>
+										<option value="b">São Pauo</option>									
 									</select>			
 								</div>
                             </div>
