@@ -1,0 +1,45 @@
+page-scanner {
+
+    .content {
+        font-family: 'Roboto';
+    }
+
+    .header {
+        background-color: #4267b2;
+
+        .btnlogout {
+            transform: rotate(180deg);
+        }
+
+        .toolbar-title {
+            text-align: center;
+            font-family: 'Titillium';
+            font-weight: 700;
+
+            span {
+                font-family: 'TitilliumLight';
+                font-weight: 400;
+            }
+        }
+    }
+
+    .grid {
+        padding: 0;
+    }
+
+    .figure {
+        text-align: center;
+        padding: 0;
+        background-color: #f1f1f1;
+        padding: 30px 0;
+
+        img {
+            height: 100px;
+        }
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+}
