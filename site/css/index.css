@@ -1,49 +1,83 @@
-body{
-    background:#4267b2;
-    font-family: 'Roboto', sans-serif;
+
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700,900');
+html{background:#3b5998;}
+main{background:#3b5998; height:100%; position:relative;}
+
+h2{font-family: 'Titillium Web', sans-serif; color:#3b5998;}
+
+.logo{margin-top:30px; margin-bottom:30px; }
+.logo h1{font-family: 'Titillium Web', sans-serif; color:#fff; font-size:40px; text-align:center;}
+.logo h1 span{font-weight:900;}
+
+
+
+/*validação de formulario*/
+.erroCad{border-bottom:2px solid red !important;}
+.acertoCad{border-bottom:2px solid #3b5998 !important;}
+
+
+.blocoAcc{background:#fff; padding:15px 20px; border-radius:8px; margin:auto;}
+
+#home .blocoAcc{background:#fff; padding:15px 20px; border-radius:8px; max-width:250px; margin:auto;}
+#home .blocoAcc fieldset input{border:none; box-shadow:none;  font-family: 'Titillium Web', sans-serif;}
+#home .blocoAcc fieldset input#login{background:url(../img/user.png) no-repeat 2px 9px; background-size:15px 15px; padding-left:20px;}
+#home .blocoAcc fieldset input#senha{background:url(../img/password.png) no-repeat 2px 9px; background-size:15px 15px; padding-left:20px;}
+#home .blocoAcc fieldset input[type="submit"]{width:100%; margin-top:5px; padding:5px 0; background:#3b5998; box-shadow:1px 1px 1px #333; color:#fff; font-size:14px;}
+#home .blocoAcc fieldset input[type="submit"]:hover{background:#304e8f}
+#home .blocoAcc fieldset input:active, #home fieldset input:focus{border:1px solid #3b5998;}
+#home .blocoAcc fieldset hr{margin:0; border-color:#e4e2e2;}
+#home .blocoAcc .linkAcoes a{
+	text-align:center;
+	display:block;
+	width:100%;
+	font-size:14px;
 }
-h1, h2{
-    font-family: 'Titillium Web', sans-serif;
-    text-align: center;
+#home .blocoAcc .linkAcoes a:first-child{
+	margin:5px 0; 
+	width:100%; 
+	background:#80848d; 
+	color:#fff;
+	border-radius:0;
+	padding:5px 0;	
 }
-h1{
-    color:#fff;
-    font-size: 50px;
-    font-weight:400;
-    margin-top:20px
+#home .blocoAcc .linkAcoes a:first-child:hover{
+	text-decoration:none;
+	background:#767981;
 }
-h1 span{
-    font-weight:700;
+#cadastro{padding-bottom:20px}
+#cadastro h2{margin:20px 0 30px;}
+#cadastro form fieldset{margin-bottom:25px;}
+#cadastro form fieldset p{font-size:12px; color:red; font-family: 'Titillium Web', sans-serif;}
+#cadastro form fieldset h3{color:#333; font-family: 'Titillium Web', sans-serif; font-size:24px; margin:5px 0 15px;}
+#cadastro form fieldset > div.row > div, #cadastro form fieldset > div.row > div#divBtnTel > div{height:42px;}
+#cadastro form fieldset label{overflow:hidden; width:0; height:0; position:absolute;}
+#cadastro form fieldset input{ font-family: 'Titillium Web', sans-serif; border:none; border-bottom:1px solid #dedede; width:100%; padding-left: 4px; font-size:14px;} 
+#cadastro form fieldset select{ font-family:'Titillium Web', sans-serif; width:100%; border:none; outline:none; border-bottom:1px solid #dedede; height:23px; font-size:14px;}
+#cadastro form fieldset select option{border:none; outline:none; font-size:14px;}
+#cadastro form fieldset input:focus{box-shadow:none; border:none; border-bottom:2px solid #3b5998; outline:none;}
+#cadastro form fieldset button{
+	text-decoration:none; 
+	color:#fff; 
+	border:none; 
+	background:#80848d; 
+	border-radius:0;
+	padding:3px 0; 
+	text-align:center;	
+	display:block; 
+	width:100%; 
+	font-size:12px;
 }
-section.login{
-    transform: translateY(50%);
+#cadastro form fieldset button:hover{
+	text-decoration:none;
+	background:#767981;
 }
-section.login > form > div{
-    background:#fff;
-    padding: 5px 0;
-    border-radius: 5px;
-}
-section.login > form > input{
-    width:100%;
-    background: #364c77;
-    border:0;
-    color:#fff;
-    margin-top: 20px;
-    padding:5px 0;
-    border-radius:4px;
-}
-section.login > form > div > input{
-    width:100%;
-    border:none;
-    padding-left:16px;
-    outline:none;
-}
-section.login > form > div > input[type="email"]{
-    border-bottom:1px solid rgba(0,0,0,0.2);
-    padding-bottom:5px;
-}
-section.login > form > div > input[type="password"]{
-    padding-top:5px;
-}
-@media screen and (min-width:768px){
+#cadastro form fieldset div.clinicaDiv{display:none;}
+#cadastro form fieldset > div.row > div#divBtnTel{display:block; height:auto !important;}
+.divBtnTel input{margin-bottom:15px;}
+#cadastro input[type="submit"]{width:100%; margin-top:5px; border:none; padding:5px 0; background:#3b5998; box-shadow:1px 1px 1px #333; color:#fff; font-size:14px;}
+#cadastro input[type="submit"]:hover{background:#304e8f}
+
+@media (max-width:991px){
+	#cadastro form fieldset > div.row > div#divBtnTel{overflow:hidden;}
 }

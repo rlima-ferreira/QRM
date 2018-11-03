@@ -1,13 +1,13 @@
 <?php include('includes/head.php'); ?>
 <?php 
-$con = mysql_connect("mysql.witweb.com.br", "witweb", "trocar123") or die ("Sem conexão com o servidor");
-$select = mysql_select_db("witweb") or die("Sem acesso ao DB, Entre em contato com o Administrado");
+$con = mysql_connect("localhost", "root", "") or die ("Sem conexão com o servidor");
+$select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com o Administrado");
  ?>
 <body class="blue">
 	<main id="cadastro">
 		<div class="container">
 			<div class="col-xs-12 col-md-12 logo">
-				<p><span>QR</span> Medical</p>
+				<h1><span>QR</span> Medical</h1>
 			</div>
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 				<div class="">
@@ -15,43 +15,16 @@ $select = mysql_select_db("witweb") or die("Sem acesso ao DB, Entre em contato c
 					<h2>Cadastro</h2>
 					<form action="validacadastro.php" id="cadastro" name="cadastro" method="post">
 						<fieldset class="acesso">
-							
 							<h3>Acesso</h3>
 							<div class="row">
 								<div class="col-md-6">
-									<label>Login</label>
+									<label>Email</label>
 									<input type="text" name="loginCad" class="loginCad" placeholder="Login">
 								</div>
 								<div class="col-md-6">
 									<label>Senha</label>
 									<input type="password" name="senhaCad" class="senhaCad" placeholder="Senha">	
 								</div>
-								<div class="col-md-6">
-									<label>Tipo de usuario</label>
-									<select name="tipo" class="tipoCad">
-										<option value="">Tipo de cadastro</option>
-										<?php 
-										$result = mysql_query("select * from tipousuario");
-										while ($tipoUsuario = mysql_fetch_assoc($result)) {
-											echo "<option value='".$tipoUsuario['idTipoUsuario']."'>".$tipoUsuario['nomeTipoUsuario']."</option>";
-										}
-										 ?>
-									</select>	
-								</div>
-								<div class='col-md-6 clinicaDiv'>
-									<label>Clinica vinculada</label>
-									<select name='clinicaCad' class='clinicaCad'>
-										<option value=''>Hospital em que trabalha</option>
-										<?php 
-										$result = mysql_query("SELECT * FROM usuario WHERE idTipoUsuario = '1'");
-										while ($tipoUsuario = mysql_fetch_assoc($result)) {
-											echo "<option value='".$tipoUsuario['nomeUsuario']."'>".$tipoUsuario['nomeUsuario']."</option>";
-										}
-										 ?>
-
-									</select>
-								</div>
-								
 							</div>
 						</fieldset>								
 						<fieldset>
@@ -74,15 +47,14 @@ $select = mysql_select_db("witweb") or die("Sem acesso ao DB, Entre em contato c
 										<option value="m">Masculino</option>
 									</select>
 								</div>	
-								<div id="divBtnTel">
-									<div class="col-md-6">
-										<label>Telefone</label>
-										<input type="text" name="telCad" placeholder="Telefone" class="telCad">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<a href="#" class="btntel">Adicionar mais telefone</a>
-								</div>
+                                <div class="col-md-6">
+                                    <label>Telefone</label>
+                                    <input type="text" name="telCad" placeholder="Telefone" class="telCad">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Telefone de recado</label>
+                                    <input type="text" name="telRecadoCad" placeholder="Telefone de recado" class="telCad">
+                                </div>
 								<div class="col-md-12">
 									<label>Email</label>
 									<input type="email" name="emailCad" class="emailCad" placeholder="Email">
@@ -140,7 +112,8 @@ $select = mysql_select_db("witweb") or die("Sem acesso ao DB, Entre em contato c
 										<option value="c">Coisa</option>									
 									</select>			
 								</div>
-							</div>
+                            </div>
+                            <input type="hidden" name="tipo" value="2">
 						</fieldset>
 						<div class="row">
 							<div class="col-md-6 col-md-offset-3">
