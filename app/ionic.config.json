@@ -1,0 +1,7 @@
+{
+  "name": "qrm",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

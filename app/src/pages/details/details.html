@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar hideBackButton color="facebook">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goBack();">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      QR 
+      <span>Medical</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-segment [(ngModel)]="pet" color="dark">
+    <ion-segment-button value="user">
+      <ion-icon name="person"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="medicines">
+      <ion-icon name="medkit"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="diseases">
+      <ion-icon name="bug"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="allergies">
+      <ion-icon name="sad"></ion-icon>
+    </ion-segment-button>
+  </ion-segment> -->
+  <!-- <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'user'">
+      <ion-item></ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'medicines'">
+      <ion-item></ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'diseases'">
+      <ion-item></ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'allergies'">
+      <ion-item></ion-item>
+    </ion-list>
+  </div> -->
+  <ion-item-group>
+    <ion-item-divider color="light" class="topic">Paciente</ion-item-divider>
+    <ion-item no-lines>
+      Angola
+    </ion-item>
+    <ion-item no-lines>
+      Argentina
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" class="topic">Medicamentos</ion-item-divider>
+    <ion-item no-lines>
+      Angola
+    </ion-item>
+    <ion-item no-lines>
+      Argentina
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" class="topic">Alergias</ion-item-divider>
+    <ion-item no-lines>
+      Angola
+    </ion-item>
+    <ion-item no-lines>
+      Argentina
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" class="topic">Doenças</ion-item-divider>
+    <ion-item no-lines>
+      Angola
+    </ion-item>
+    <ion-item no-lines>
+      Argentina
+    </ion-item>
+  </ion-item-group>
+</ion-content>

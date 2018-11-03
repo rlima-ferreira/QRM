@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="facebook" align-title="center">
+    <ion-buttons left>
+      <button ion-button icon-only class="btnlogout" (click)="logout();">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      QR 
+      <span>Medical</span>
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="scanner()">
+        <ion-icon name="qr-scanner"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 class="figure">
+        <img src="./../../assets/imgs/qrScanner.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 padding>
+        <h4>Histórico</h4>
+      </ion-col>
+      <ion-col col-12>
+        <ion-list no-lines>
+          <ion-item *ngFor="let user of users">
+            {{ user }}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
