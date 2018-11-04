@@ -1,0 +1,8 @@
+Gera Qr code e exibe numa imagem
+
+<?php
+    include('phpqrcode/qrlib.php');
+    QRcode::png("http://www.botecodigital.info", "QR_code.png");
+?>
+
+<img src="QR_code.png">

@@ -8,6 +8,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ScannerPage } from '../pages/scanner/scanner';
 import { DetailsPage } from '../pages/details/details';
+import { UserProvider } from '../providers/user/user';
+import { HttpClientModule } from '@angular/common/http';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { DetailsPage } from '../pages/details/details';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,7 +34,9 @@ import { DetailsPage } from '../pages/details/details';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserProvider,
+    BarcodeScanner
   ]
 })
 export class AppModule {}

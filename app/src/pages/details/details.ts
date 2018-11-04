@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-@IonicPage()
 @Component({
   selector: 'page-details',
   templateUrl: 'details.html',
 })
 export class DetailsPage {
 
-  private pet:string = 'user';
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private navCtrl: NavController, private navParams: NavParams) {
   }
+
+  // ionViewCanEnter() {
+  //   let data = this.navParams.get('result');
+  // }
 
   private goBack() {
     this.navCtrl.pop();
