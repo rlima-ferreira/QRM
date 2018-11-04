@@ -17,13 +17,13 @@ $estado = $_POST['estado'];
 
 switch($tipo){
     case 0:
-        $tipoSwitch = 'hospital'
+        $tipoSwitch = 'hospital';
         break;
     case 1:
-        $tipoSwitch = 'socorrista'
+        $tipoSwitch = 'socorrista';
         break;
     case 2:
-        $tipoSwitch = 'paciente'
+        $tipoSwitch = 'paciente';
         break;
 }
 
@@ -32,7 +32,8 @@ $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com 
 
 $compl = mysql_real_escape_string($compl,$con);
 $resultUsu = mysql_query("INSERT INTO usuario (senha, email, tipo, cep, logradouro, bairro, cidade, estado) VALUES ('$senha', '$email', '$tipo','$cep','$logradouro','$bairro','$cidade','$estado' )") or die (mysql_error()); 
- 
+$mysqli = mysqli_query($resultUsu);
+$resultPaciente = mysql_query("INSERT INTO $tipoSwitch (idUsuario, telefone, contato_familiar, rg, cpf, data_nascimento, sexo) VALUES ('$mysqli','$tel','$tel2','$rg','$cpf','$data','$sexo')") or die (mysql_error());
 $resultTel1 = mysql_query("INSERT INTO telefone VALUES((SELECT idUsuario FROM usuario where email = '$email'), $tel)") or die(mysql_error());
 
 
