@@ -118,7 +118,7 @@ $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com 
                             <input type="hidden" name="tipo" value="2">
 						</fieldset>
 						<div class="row">
-							<div class="col-md-6 col-md-offset-3">
+							<div class="col-sm-8 col-md-6 col-md-offset-3">
 								<input type="button" name="enviaCad" id="enviaCad" value="Cadastrar" >
 							</div>							
 						</div>
