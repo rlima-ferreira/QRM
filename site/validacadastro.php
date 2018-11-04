@@ -15,6 +15,17 @@ $compl = $_POST['complCad'];
 $cidade = $_POST['cidade'];
 $estado = $_POST['estado'];
 
+switch($tipo){
+    case 0:
+        $tipoSwitch = 'hospital'
+        break;
+    case 1:
+        $tipoSwitch = 'socorrista'
+        break;
+    case 2:
+        $tipoSwitch = 'paciente'
+        break;
+}
 
 $con = mysql_connect("localhost", "root", "") or die ("Sem conexão com o servidor");
 $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com o Administrado");
@@ -23,6 +34,7 @@ $compl = mysql_real_escape_string($compl,$con);
 $resultUsu = mysql_query("INSERT INTO usuario (senha, email, tipo, cep, logradouro, bairro, cidade, estado) VALUES ('$senha', '$email', '$tipo','$cep','$logradouro','$bairro','$cidade','$estado' )") or die (mysql_error()); 
  
 $resultTel1 = mysql_query("INSERT INTO telefone VALUES((SELECT idUsuario FROM usuario where email = '$email'), $tel)") or die(mysql_error());
+
 
 if ($tel2) {
 	$tel2 = $_POST['telRecadoCad2'];
