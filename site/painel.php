@@ -158,11 +158,27 @@ while($array = mysql_fetch_array($tipoTeste)){
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-sm-6">
-									<input type="text" name="alergia" placeholder="Alergia" class="alergia">
+								<div class="col-sm-12 containerAlergia">
+									<div><input type="text" name="alergia" placeholder="Alergia" class="alergia"></div>
 								</div>
 								<div class="col-sm-12">
-									<button>Adicionar mais</button>
+									<button type="button" class="btn btn-primary adicionaAlergia">Adicionar mais</button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 containerDoenca">
+									<div><input type="text" name="doenca" placeholder=Doença class="doenca"></div>
+								</div>
+								<div class="col-sm-12">
+									<button type="button" class="btn btn-primary adicionaDoenca">Adicionar mais</button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 containeMedicamento">
+									<div><input type="text" name="medicamento" placeholder="Medicamento" class="medicamento"></div>
+								</div>
+								<div class="col-sm-12">
+									<button type="button" class="btn btn-primary adicionaMedicamento">Adicionar mais</button>
 								</div>
 							</div>
 						</fieldset>
@@ -171,6 +187,7 @@ while($array = mysql_fetch_array($tipoTeste)){
 								<input type="button" name="enviaCad" id="enviaCad" value="Cadastrar" >
 							</div>							
 						</div>
+					</div>
 					</form>			
 					</div>
 				</div>			

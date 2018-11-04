@@ -5,6 +5,16 @@ $( document ).ready(function() {
     $('.dataCad').mask('99/99/9999')
     $('.telCad').mask('(00) 0000-00009')
     $('.cepCad').mask('99999-999')
+
+    $('.adicionaAlergia').click(function(){
+        $('.containerAlergia').append('<div><input type="text" name="alergia" placeholder="Alergia" class="alergia"/></div>');
+	});
+	$('.adicionaDoenca').click(function(){
+        $('.containerDoenca').append('<div><input type="text" name="doenca" placeholder="Doença" class="doenca"/></div>');
+	});
+	$('.adicionaMedicamento').click(function(){
+        $('.containeMedicamento').append('<div><input type="text" name="medicamento" placeholder="Medicamento" class="medicamento"/></div>');
+    });
 });
 
 function validaForm(){
@@ -45,16 +55,4 @@ function validaForm(){
 			$('form').submit();
 		}
 	});
-}
-
-
-//cria o campo de hospital caso não escolha tipo de usuario normal
-function campoHospital(){
-	//montando o html;
-	// $('.tipoCad').on('change', function(){
-	// 	$('div.clinicaDiv').hide();
-	// 	if($(this).val() != "" && $(this).val() != "0" && $(this).val() != "1"){
-	// 		$('div.clinicaDiv').show();
-	// 	}
-	// });	
 }

@@ -48,7 +48,11 @@ h2{font-family: 'Titillium Web', sans-serif; color:#3b5998;}
 #cadastro form fieldset{margin-bottom:25px;}
 #cadastro form fieldset p{font-size:12px; color:red; font-family: 'Titillium Web', sans-serif;}
 #cadastro form fieldset h3{color:#333; font-family: 'Titillium Web', sans-serif; font-size:24px; margin:5px 0 15px;}
-#cadastro form fieldset > div.row > div, #cadastro form fieldset > div.row > div#divBtnTel > div{height:42px; margin: auto;}
+#cadastro form fieldset > div.row > div:not(.containerDoenca),#cadastro form fieldset > div.row > div:not(.containeMedicamento), #cadastro form fieldset > div.row > div#divBtnTel > div{height:42px; margin: auto;}
+#cadastro form fieldset > div.row > div.containerAlergia{height:auto;}
+#cadastro form fieldset > div.row > div.containerDoenca{height:auto; margin-top:16px}
+#cadastro form fieldset > div.row > div.containeMedicamento{height:auto; margin-top:16px}
+#cadastro form fieldset > div.row > div > div{height:42px; width:50%; padding-right:15px;}
 #cadastro form fieldset label{overflow:hidden; width:0; height:0; position:absolute;}
 #cadastro form fieldset input{ font-family: 'Titillium Web', sans-serif; border:none; border-bottom:1px solid #dedede; width:100%; padding-left: 4px; font-size:14px;} 
 #cadastro form fieldset select{ font-family:'Titillium Web', sans-serif; width:100%; border:none; outline:none; border-bottom:1px solid #dedede; height:23px; font-size:14px;}
@@ -59,5 +63,4 @@ h2{font-family: 'Titillium Web', sans-serif; color:#3b5998;}
 #cadastro input[type="button"]:hover{background:#304e8f}
 
 @media (max-width:991px){
-	#cadastro form fieldset > div.row > div#divBtnTel{overflow:hidden;}
 }
