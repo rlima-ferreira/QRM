@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Nov-2018 às 03:17
+-- Generation Time: 04-Nov-2018 às 03:58
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.11
 
@@ -66,7 +66,6 @@ CREATE TABLE `doenca` (
 
 CREATE TABLE `hospital` (
   `idUsuario` int(11) NOT NULL,
-  `nome` varchar(100) COLLATE latin1_general_ci NOT NULL,
   `cep` varchar(16) COLLATE latin1_general_ci DEFAULT NULL,
   `logradouro` varchar(200) COLLATE latin1_general_ci DEFAULT NULL,
   `bairro` varchar(200) COLLATE latin1_general_ci DEFAULT NULL,
@@ -109,13 +108,13 @@ CREATE TABLE `medicamento` (
 
 CREATE TABLE `paciente` (
   `idUsuario` int(11) NOT NULL,
-  `nome` varchar(200) COLLATE latin1_general_ci NOT NULL,
   `telefone` varchar(16) COLLATE latin1_general_ci DEFAULT NULL,
   `contato_familiar` varchar(16) COLLATE latin1_general_ci DEFAULT NULL,
   `tipo_sanguineo` varchar(6) COLLATE latin1_general_ci NOT NULL,
   `rg` varchar(20) COLLATE latin1_general_ci NOT NULL,
   `cpf` varchar(20) COLLATE latin1_general_ci NOT NULL,
-  `data_nascimento` date DEFAULT NULL
+  `data_nascimento` date DEFAULT NULL,
+  `sexo` varchar(10) COLLATE latin1_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 -- --------------------------------------------------------
@@ -126,7 +125,6 @@ CREATE TABLE `paciente` (
 
 CREATE TABLE `socorrista` (
   `idUsuario` int(11) NOT NULL,
-  `nome` varchar(200) COLLATE latin1_general_ci NOT NULL,
   `telefone` varchar(16) COLLATE latin1_general_ci DEFAULT NULL,
   `cep` varchar(16) COLLATE latin1_general_ci DEFAULT NULL,
   `logradouro` varchar(200) COLLATE latin1_general_ci DEFAULT NULL,
@@ -137,7 +135,8 @@ CREATE TABLE `socorrista` (
   `cpf` varchar(16) COLLATE latin1_general_ci NOT NULL,
   `email` varchar(40) COLLATE latin1_general_ci NOT NULL,
   `senha` varchar(20) COLLATE latin1_general_ci NOT NULL,
-  `data_nascimento` date DEFAULT NULL
+  `data_nascimento` date DEFAULT NULL,
+  `sexo` varchar(10) COLLATE latin1_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 -- --------------------------------------------------------
@@ -154,7 +153,8 @@ CREATE TABLE `usuario` (
   `logradouro` varchar(200) COLLATE latin1_general_ci DEFAULT NULL,
   `bairro` varchar(100) COLLATE latin1_general_ci DEFAULT NULL,
   `cidade` varchar(100) COLLATE latin1_general_ci DEFAULT NULL,
-  `estado` varchar(100) COLLATE latin1_general_ci DEFAULT NULL
+  `estado` varchar(100) COLLATE latin1_general_ci DEFAULT NULL,
+  `nome` varchar(100) COLLATE latin1_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -188,7 +188,6 @@ ALTER TABLE `doenca`
 --
 ALTER TABLE `hospital`
   ADD PRIMARY KEY (`idUsuario`),
-  ADD UNIQUE KEY `nome` (`nome`),
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `senha` (`senha`),
   ADD UNIQUE KEY `cnpj` (`cnpj`);
@@ -213,7 +212,6 @@ ALTER TABLE `medicamento`
 --
 ALTER TABLE `paciente`
   ADD PRIMARY KEY (`idUsuario`),
-  ADD UNIQUE KEY `nome` (`nome`),
   ADD UNIQUE KEY `rg` (`rg`),
   ADD UNIQUE KEY `cpf` (`cpf`);
 
@@ -222,7 +220,6 @@ ALTER TABLE `paciente`
 --
 ALTER TABLE `socorrista`
   ADD PRIMARY KEY (`idUsuario`),
-  ADD UNIQUE KEY `nome` (`nome`),
   ADD UNIQUE KEY `rg` (`rg`),
   ADD UNIQUE KEY `cpf` (`cpf`),
   ADD UNIQUE KEY `email` (`email`),
