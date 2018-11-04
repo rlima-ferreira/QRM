@@ -5,15 +5,16 @@ $tipo = $_POST['tipo'];
 $nome = $_POST['nomeCad'];
 $data = $_POST['dataCad'];
 $sexo = $_POST['sexoCad'];
-$tel = $_POST['telCad'];
 $tel2 = isset($_POST['telRecadoCad']);
-$email = $_POST['emailCad'];
+$email = strtolower($_POST['emailCad']);
 $logradouro = $_POST['logradouroCad'];
 $cep = $_POST['cepCad'];
 $bairro = $_POST['bairroCad'];
 $compl = $_POST['complCad'];
 $cidade = $_POST['cidade'];
 $estado = $_POST['estado'];
+$cpf = $_POST['cpfCad'];
+$rg = $_POST['rgCad'];
 
 switch($tipo){
     case 0:
@@ -31,15 +32,12 @@ $con = mysql_connect("localhost", "root", "") or die ("Sem conexão com o servid
 $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com o Administrado");
 
 $compl = mysql_real_escape_string($compl,$con);
-$resultUsu = mysql_query("INSERT INTO usuario (senha, email, tipo, cep, logradouro, bairro, cidade, estado) VALUES ('$senha', '$email', '$tipo','$cep','$logradouro','$bairro','$cidade','$estado' )") or die (mysql_error()); 
-$mysqli = mysqli_query($resultUsu);
-$resultPaciente = mysql_query("INSERT INTO $tipoSwitch (idUsuario, telefone, contato_familiar, rg, cpf, data_nascimento, sexo) VALUES ('$mysqli','$tel','$tel2','$rg','$cpf','$data','$sexo')") or die (mysql_error());
-$resultTel1 = mysql_query("INSERT INTO telefone VALUES((SELECT idUsuario FROM usuario where email = '$email'), $tel)") or die(mysql_error());
+$resultUsu = mysql_query("INSERT INTO usuario (senha, email, tipo_usuario, cep, logradouro, bairro, cidade, estado, nome) VALUES ('$senha', '$email', '$tipo','$cep','$logradouro','$bairro','$cidade','$estado', '$nome' )") or die (mysql_error()); 
 
-
-if ($tel2) {
-	$tel2 = $_POST['telRecadoCad2'];
-	$resultTel2 = mysql_query("INSERT INTO telefone VALUES((SELECT idUsuario FROM usuario where email = '$email'),'$tel2')") or die(mysql_error());
+$resultPaciente = mysql_query("INSERT INTO $tipoSwitch (idUsuario, rg, cpf, data_nascimento, sexo) VALUES ((SELECT idUsuario FROM usuario where email = '$email'),'$rg','$cpf','$data','$sexo')") or die (mysql_error());
+if($tel2){
+    $tel = $_POST['telRecadoCad'];
+    $resultTel = mysql_query("INSERT INTO telefone VALUES((SELECT idUsuario FROM usuario where email = '$email'),'$tel')") or die(mysql_error());
 }
 
 session_start();

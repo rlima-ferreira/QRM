@@ -15,10 +15,11 @@ $result = mysql_query("SELECT * FROM `usuario` WHERE `email` = '$email' AND `sen
 
 if(mysql_num_rows ($result) > 0 )
 {
-	echo "s"
+    $consulta
+	$teste = mysql_fetch_array($consulta);
+	echo "<pre>";
+	print_r($teste);
+	echo "</pre>";
 } else {
     echo "n"
 }
-
-
-?>

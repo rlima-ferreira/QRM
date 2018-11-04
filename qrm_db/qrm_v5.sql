@@ -146,7 +146,7 @@ CREATE TABLE `socorrista` (
 --
 
 CREATE TABLE `usuario` (
-  `idUsuario` int(11) NOT NULL,
+  `idUsuario` int(11) AUTO_INCREMENT NOT NULL PRIMARY key,
   `email` varchar(50) COLLATE latin1_general_ci NOT NULL,
   `senha` varchar(20) COLLATE latin1_general_ci NOT NULL,
   `cep` varchar(100) COLLATE latin1_general_ci DEFAULT NULL,
@@ -223,21 +223,17 @@ ALTER TABLE `socorrista`
   ADD PRIMARY KEY (`idUsuario`),
   ADD UNIQUE KEY `rg` (`rg`),
   ADD UNIQUE KEY `cpf` (`cpf`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `senha` (`senha`);
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idUsuario`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `senha` (`senha`);
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
 --
 -- AUTO_INCREMENT for table `alergia`
 --

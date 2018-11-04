@@ -53,11 +53,7 @@ $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com 
 										<option value="f">Feminino</option>
 										<option value="m">Masculino</option>
 									</select>
-								</div>	
-                                <div class="col-md-6">
-                                    <label>Telefone</label>
-                                    <input type="text" name="telCad" placeholder="Telefone" class="telCad">
-                                </div>
+								</div>
                                 <div class="col-md-6">
                                     <label>Telefone de recado</label>
                                     <input type="text" name="telRecadoCad" placeholder="Telefone de recado" class="telCad">
