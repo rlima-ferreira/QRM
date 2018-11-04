@@ -1,5 +1,10 @@
 $( document ).ready(function() {
-	validaForm();
+    validaForm();
+    $('.cpfCad').mask('999.999.999-99');
+    $('.rgCad').mask('99.999.999-9');
+    $('.dataCad').mask('99/99/9999')
+    $('.telCad').mask('(00) 0000-00009')
+    $('.cepCad').mask('99999-999')
 });
 
 function validaForm(){
@@ -33,7 +38,6 @@ function validaForm(){
 	// if($('.nomeCad, .dataCad, .loginCad, .senhaCad, .clinicaCad, .tipoCad').val() == ""){
 	// 	i++;
 	// }
-	console.log(i);
 
 	$('#enviaCad').click(function(){
 		console.log(i);
@@ -43,21 +47,6 @@ function validaForm(){
 	});
 }
 
-//adiciona campos de tel
-function campoTel(){
-	// var j=2;
-	// 	$('.btntel').click(function(e){
-	// 		if (j < 4) {	
-	// 			$('#divBtnTel').append("<div class='col-md-6'><label>Telefone</label><input class='telCad' type='text' placeholder='Telefone "+j+"' name='telCad"+j+"'></div>");
-	// 			j++;
-	// 			e.preventDefault();
-	// 		} else {
-	// 			alert('Maximo 3 telefones');
-	// 			e.preventDefault();
-	// 		}
-	// 	});
-	
-}
 
 //cria o campo de hospital caso não escolha tipo de usuario normal
 function campoHospital(){

@@ -1,7 +1,15 @@
+<?php 
+session_start();
+if(!isset($_SESSION['email'])){
+ 	header("location: index.php");
+ }
+ ?>
+
 <?php include('includes/head.php'); ?>
 <?php 
 $con = mysql_connect("localhost", "root", "") or die ("Sem conexão com o servidor");
 $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com o Administrado");
+ $emailSession =  $_SESSION['email'];
  ?>
 <body class="blue">
 	<main id="cadastro">
@@ -12,19 +20,22 @@ $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com 
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 				<div class="">
 					<div class="blocoAcc">
-					<h2>Cadastro</h2>
+					<h2>Painel</h2>
 					<form action="validacadastro.php" id="cadastro" name="cadastro" method="post">
 						<fieldset class="acesso">
 							<h3>Acesso</h3>
 							<div class="row">
+							<?php $consulta = mysql_query("SELECT * FROM usuario where email = '$emailSession'") or die(mysql_error()); ?>
+								<?php while($row = mysql_fetch_array($consulta)):?>
 								<div class="col-md-6">
 									<label>Email</label>
-									<input type="text" name="emailCad" class="emailCad" placeholder="Email">
+									<input type="text" name="emailCad" class="emailCad" value="<?php echo $row['email']; ?>">
 								</div>
 								<div class="col-md-6">
 									<label>Senha</label>
-									<input type="password" name="senhaCad" class="senhaCad" placeholder="Senha">	
+									<input type="password" name="senhaCad" class="senhaCad" value="******">	
 								</div>
+								
 							</div>
 						</fieldset>								
 						<fieldset>
@@ -32,19 +43,19 @@ $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com 
 							<div class="row">
 								<div class="col-md-12">
 									<label>Nome Completo</label>
-									<input type="text" name="nomeCad" placeholder="Nome Completo" class="nomeCad">
+									<input type="text" name="nomeCad"value=" <?php echo $row['nome']; ?>" class="nomeCad">
 								</div>
                                 <div class="col-md-6">
                                     <label>CPF</label>
-                                    <input type="text" name="cpfCad" placeholder="CPF" class="cpfCad">
+                                    <input type="text" name="cpfCad" placeholder="CPF" class="cpfCad" value="<?php echo $row['cpf']; ?>">
                                 </div>
                                 <div class="col-md-6">
                                     <label>RG</label>
-                                    <input type="text" name="rgCad" placeholder="RG" class="rgCad">
+                                    <input type="text" name="rgCad" class="rgCad" value="<?php echo $row['rg']; ?>">
                                 </div>
                                 <div class="col-md-6">
 									<label>Data de Nascimeto</label>
-									<input type="text" name="dataCad" class="dataCad" placeholder="Data de Nascimento">
+									<input type="text" name="dataCad" class="dataCad" value="<?php echo $row['dataCad']; ?>">
                                 </div>
 								<div class="col-md-6">
 									<label>Sexo</label>
@@ -54,6 +65,7 @@ $select = mysql_select_db("qrm") or die("Sem acesso ao DB, Entre em contato com 
 										<option value="m">Masculino</option>
 									</select>
 								</div>	
+								<?php endwhile; ?>
                                 <div class="col-md-6">
                                     <label>Telefone</label>
                                     <input type="text" name="telCad" placeholder="Telefone" class="telCad">
