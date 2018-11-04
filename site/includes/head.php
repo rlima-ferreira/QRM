@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/index.css" />
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Titillium+Web:300,400,600,700" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mask.js"></script>
     <script src="js/index.js"></script>
     <title>QR Medical</title>
 </head>
